@@ -1,17 +1,8 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 
 const Header = () => {
-  //   let validUser = localStorage.getItem("uniqueUser");
-
-  //   if (!validUser) {
-  //     const uniqueId = uuidv4();
-  //     localStorage.setItem("uniqueUser", uniqueId);
-  //     validUser = uniqueId;
-  //   }
-
   return (
     <header>
       <Navbar

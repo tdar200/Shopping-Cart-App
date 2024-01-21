@@ -1,41 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { Link } from "react-router-dom";
 import { Row, Col, Image, Button, Alert } from "react-bootstrap";
-// import Message from "../components/Message";
-// import { addToCart, removeFromCart } from "../actions/cartActions";
 
 const CartScreen = () => {
-  //   const match = useMatch();
-  const location = useLocation();
-  const params = useParams();
-  //   console.log({ match, location });
-
-  const productId = params.id;
-  const qty = location.search ? Number(location.search.split("=")[2]) : 1;
-  const vid = location.search && location.search.split("=")[1].split("?")[0];
-
-  console.log({ location });
-  //   const [cartItems, useCartItems] = useState([]);
-
-  //   const dispatch = useDispatch();
-
-  //   const cart = useSelector((state) => state.cart);
-  //   const { cartItems } = cart;
-
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-  console.log({ cartItems });
-
-  // useEffect(() => {
-  //   if (productId) {
-  //     dispatch(addToCart(productId, qty, vid));
-  //   }
-  // }, [dispatch, productId, qty, vid]);
-
-  // const removeFromCartHandler = (id) => {
-  //   dispatch(removeFromCart(id));
-  // };
 
   return (
     <Col>
@@ -91,16 +59,6 @@ const CartScreen = () => {
                     </Col>
 
                     <Col md={2}>Rs.{item.price}</Col>
-
-                    <Col md={2}>
-                      <Button
-                        type='button'
-                        variant='light'
-                        // onClick={() => removeFromCartHandler(item.vid)}
-                      >
-                        <i className='fas fa-trash' />
-                      </Button>
-                    </Col>
                   </Row>
                 );
               })}

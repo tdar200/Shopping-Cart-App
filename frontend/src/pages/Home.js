@@ -1,27 +1,12 @@
 import React, { useEffect, useState } from "react";
-// import { Helmet } from "react-helmet";
-// import { useDispatch, useSelector } from "react-redux";
-import { Row, Col, Card, Alert, Button } from "react-bootstrap";
+import { Row, Col, Card, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import Message from "../components/Message";
-// import Loader from "../components/Loader";
-// import { listProducts } from "../actions/productActions";
 
-const Home = ({ match }) => {
+const Home = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [products, setProducts] = useState([]);
-  //   const dispatch = useDispatch();
-
-  //   const productList = useSelector((state) => state.productList);
-  //   const { loading, error, products } = productList;
-
-  //   useEffect(() => {
-  //     dispatch(listProducts());
-  //   }, [dispatch]);
-
-  // console.log(productList);
 
   const fetchData = async () => {
     setLoading(true);
